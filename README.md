@@ -21,8 +21,15 @@ sudo pacman -Sy imagemagick
 ## Installation cwebp
 https://developers.google.com/speed/webp/download
 
-## Run script
+## Install script
 Open a terminal window
 ```bash
 git https://github.com/ImSabetDariush/Photo-Squeezer.git
-unzip
+unzip Photo-Squeezer-main.zip
+cd Photo-Squeezer-main
+chmod +x Photo-Squeezer.sh
+```
+Now run script 
+```bash
+./Photo-Squeezer.sh
+```
