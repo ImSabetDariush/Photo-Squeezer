@@ -24,7 +24,7 @@ https://developers.google.com/speed/webp/download
 ## Install script
 Open a terminal window
 ```bash
-git https://github.com/ImSabetDariush/Photo-Squeezer.git
+git clone https://github.com/ImSabetDariush/Photo-Squeezer.git
 unzip Photo-Squeezer-main.zip
 cd Photo-Squeezer-main
 chmod +x Photo-Squeezer.sh
