@@ -10,10 +10,22 @@ IFS= read -p "Enter the desired output directory (leave blank for current direct
 DEFAULT_QUALITY=75
 DEFAULT_TARGET_WIDTH=1000
 
-if [[ -z "$QUALITY" ]]; then QUALITY=$DEFAULT_QUALITY fi
-if [[ -z "$TARGET_WIDTH" ]]; then TARGET_WIDTH=$DEFAULT_TARGET_WIDTH fi
-if [[ -z "$PHOTO_DIR" ]]; then PHOTO_DIR=$(pwd) fi
-if [[ -z "OUTPUT_DIR" ]]; then OUTPUT_DIR=$(pwd) fi
+if [[ -z "$QUALITY" ]]; then
+  QUALITY=$DEFAULT_QUALITY 
+fi
+
+if [[ -z "$TARGET_WIDTH" ]]; then
+  TARGET_WIDTH=$DEFAULT_TARGET_WIDTH 
+fi
+
+if [[ -z "$PHOTO_DIR" ]]; then
+  PHOTO_DIR=$(pwd) 
+fi
+
+if [[ -z "OUTPUT_DIR" ]]; then 
+  OUTPUT_DIR=$(pwd) 
+fi
+
 
 # Loop through all files in the directory
 for file in "$PHOTO_DIR"/*; do
