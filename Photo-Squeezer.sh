@@ -2,21 +2,18 @@
 
 # Welcome message and user input
 echo "Welcome to the Photo squeezer!"
-read -p "Enter the desired image quality (0-100): " QUALITY
-read -p "Enter the desired target width (pixels): " TARGET_WIDTH
-read -p "Enter the directory containing your photos: " PHOTO_DIR
-read -p "Enter the desired output directory (leave blank for current directory): " OUTPUT_DIR
+IFS= read -p "Enter the desired image quality (0-100): " QUALITY
+IFS= read -p "Enter the desired target width (pixels): " TARGET_WIDTH
+IFS= read -p "Enter the directory containing your photos: " PHOTO_DIR
+IFS= read -p "Enter the desired output directory (leave blank for current directory): " OUTPUT_DIR
 
 DEFAULT_QUALITY=75
 DEFAULT_TARGET_WIDTH=1000
 
-if [[ -z "$QUALITY" ]] && [[ -z "$TARGET_WIDTH" ]] && [[ -z "$PHOTO_DIR" ]] && [[ -z "$OUTPUT_DIR" ]]; then
-  QUALITY=$DEFAULT_QUALITY
-  TARGET_WIDTH=$DEFAULT_TARGET_WIDTH
-  PHOTO_DIR=$(pwd)
-  OUTPUT_DIR=$(pwd)
-fi
-
+if [[ -z "$QUALITY" ]]; then QUALITY=$DEFAULT_QUALITY fi
+if [[ -z "$TARGET_WIDTH" ]]; then TARGET_WIDTH=$DEFAULT_TARGET_WIDTH fi
+if [[ -z "$PHOTO_DIR" ]]; then PHOTO_DIR=$(pwd) fi
+if [[ -z "OUTPUT_DIR" ]]; then OUTPUT_DIR=$(pwd) fi
 
 # Loop through all files in the directory
 for file in "$PHOTO_DIR"/*; do
